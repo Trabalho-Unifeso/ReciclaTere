@@ -17,12 +17,12 @@ export default function Register(NavegatorService:NavegatorService) {
 		<View style={styles.space}/>
 		<View style={styles.inputConteiner}>
 			<Text style={styles.InputText}>Senha:</Text>
-        	<TextInput style={styles.input} onChangeText={text => {}} />
+        	<TextInput secureTextEntry={true} style={styles.input} onChangeText={text => {}} />
 		</View>
 		<View style={styles.space}/>
 		<View style={styles.inputConteiner}>
 			<Text style={styles.InputText}>Repita a senha:</Text>
-        	<TextInput style={styles.input} onChangeText={text => {}} />
+        	<TextInput secureTextEntry={true} style={styles.input} onChangeText={text => {}} />
 		</View>
 		<View style={styles.space}/>
 		<View style={styles.Btns}>
