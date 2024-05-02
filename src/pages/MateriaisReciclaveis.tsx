@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, Modal, Button, FlatList, TextInput, Dimensions, ImageBackground, ScrollView, Animated, Easing, Pressable } from 'react-native';
 import {NavegatorService} from '../service/NavegatorService'
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import Navbar from '../components/NavBar';
 interface Material {
   id: number;
   nome: string;
@@ -125,10 +125,7 @@ export default function App(NavegatorService:NavegatorService) {
         </View>
       </Modal>
       
-      {/* Botão de configuração */}
-      <Pressable onPress={() => NavegatorService.navigation.navigate('TelaConfig')} android_ripple={{color: 'dark-green'}}  style={styles.botaoConfig}>
-        <Icon name="cog" size={24} color="#000" />
-      </Pressable>
+      <Navbar route={NavegatorService.navigation.navigate}></Navbar>
     </View>
   );
 }
@@ -137,6 +134,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    paddingBottom: 50
   },
   containerSuperior: {
     backgroundColor: '#BEE1A1',

@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Switch, TouchableOpacity, Modal } from 'react-native';
+import { NavegatorService } from '../service/NavegatorService';
+import Navbar from '../components/NavBar';
 
-const SettingsScreen = ({ navigation }) => {
+const SettingsScreen = (NavegatorService:NavegatorService ) => {
   const [notificationsEnabled, setNotificationsEnabled] = useState(true);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -15,7 +17,7 @@ const SettingsScreen = ({ navigation }) => {
 
   const confirmLogout = () => {
     console.log('Usuário deslogado');
-    navigation.navigate('Home'); 
+    NavegatorService.navigate('Home'); 
     setModalVisible(false);
   };
 
@@ -24,56 +26,60 @@ const SettingsScreen = ({ navigation }) => {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.header}>CONFIGURAÇÕES</Text>
-      <View style={styles.settingOption}>
-        <Text style={styles.optionText}>Receber notificações</Text>
-        <Switch
-          trackColor={{ false: "#767577", true: "#81b0ff" }}
-          thumbColor={notificationsEnabled ? "#f5dd4b" : "#f4f3f4"}
-          ios_backgroundColor="#3e3e3e"
-          onValueChange={toggleNotifications}
-          value={notificationsEnabled}
-        />
-      </View>
-      <TouchableOpacity style={styles.button} onPress={handleLogout}>
-        <Text style={styles.buttonText}>Sair</Text>
-      </TouchableOpacity>
-      <Modal
-        animationType="fade"
-        transparent={true}
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}>Tem certeza de que deseja sair?</Text>
-            <View style={styles.buttonContainer}>
-              <TouchableOpacity
-                style={{ ...styles.openButton, backgroundColor: "#E63946" }}
-                onPress={confirmLogout}
-              >
-                <Text style={styles.textStyle}>Sair</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={{ ...styles.openButton, backgroundColor: "#457B9D" }}
-                onPress={cancelLogout}
-              >
-                <Text style={styles.textStyle}>Cancelar</Text>
-              </TouchableOpacity>
+    <View>
+      <View style={styles.container}>
+        <Text style={styles.header}>CONFIGURAÇÕES</Text>
+        <View style={styles.settingOption}>
+          <Text style={styles.optionText}>Receber notificações</Text>
+          <Switch
+            trackColor={{ false: "#767577", true: "#81b0ff" }}
+            thumbColor={notificationsEnabled ? "#f5dd4b" : "#f4f3f4"}
+            ios_backgroundColor="#3e3e3e"
+            onValueChange={toggleNotifications}
+            value={notificationsEnabled}
+          />
+        </View>
+        <TouchableOpacity style={styles.button} onPress={handleLogout}>
+          <Text style={styles.buttonText}>Sair</Text>
+        </TouchableOpacity>
+        <Modal
+          animationType="fade"
+          transparent={true}
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>Tem certeza de que deseja sair?</Text>
+              <View style={styles.buttonContainer}>
+                <TouchableOpacity
+                  style={{ ...styles.openButton, backgroundColor: "#E63946" }}
+                  onPress={confirmLogout}
+                >
+                  <Text style={styles.textStyle}>Sair</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={{ ...styles.openButton, backgroundColor: "#457B9D" }}
+                  onPress={cancelLogout}
+                >
+                  <Text style={styles.textStyle}>Cancelar</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
-        </View>
-      </Modal>
+        </Modal>
+        
+      </View>
+    <Navbar route={NavegatorService.navigation.navigate}></Navbar>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+
     backgroundColor: '#f8f9fa',
     padding: 20,
     justifyContent: 'center'
@@ -99,7 +105,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 10,
     alignItems: 'center',
-    marginTop: 10,
+    marginTop: '60vh',
   },
   buttonText: {
     color: '#FFFFFF',

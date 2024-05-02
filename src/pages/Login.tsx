@@ -30,7 +30,7 @@ export default function Login(NavegatorService:NavegatorService) {
           <Text style={styles.buttonText}>Entrar</Text>
         </Pressable>
 		<Pressable onPress={() => {NavegatorService.navigation.navigate('Register')}} style={styles.InputCreateAcount}  >
-          <Text style={{color:'mediumslateblue', fontWeight: 'bold'}} >Não possou cadastro</Text>
+          <Text style={{color:'mediumslateblue', fontWeight: 'bold'}} >Não possuo cadastro</Text>
         </Pressable>
     </View>
   );

@@ -8,7 +8,8 @@ import MateriaisReciclaveis from './src/pages/MateriaisReciclaveis';
 import React from 'react';
 import {RootStackParamList} from './src/service/NavegatorService'
 import TelaConfig from './src/pages/TelaConfig';
-
+import Perfil from './src/pages/Perfil';
+import Map from './src/pages/Map';
 const Stack = createStackNavigator<RootStackParamList>();
 
 export default function AppNavigator()
@@ -21,6 +22,8 @@ export default function AppNavigator()
         <Stack.Screen options={{headerShown:false}}  name="Register" component={Register} />
         <Stack.Screen options={{headerShown:false}}  name="MateriaisReciclaveis" component={MateriaisReciclaveis} />
         <Stack.Screen options={{headerShown:false}}  name="TelaConfig" component={TelaConfig} />
+        <Stack.Screen options={{headerShown:false}}  name="Perfil" component={Perfil} />
+        <Stack.Screen options={{headerShown:false}}  name="MapScreen" component={Map} />
       </Stack.Navigator>
     </NavigationContainer>
   );
