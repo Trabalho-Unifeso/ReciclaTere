@@ -22,7 +22,7 @@ export default function Login(NavegatorService:NavegatorService) {
 			<Text style={styles.InputText}>Senha:</Text>
         	<TextInput style={styles.input} onChangeText={text => {}} />
 		</View>
-		<Pressable onPress={() => {}} style={styles.passwordRecover}  >
+		<Pressable onPress={() => {}} style={styles.passwordRecover} onPressIn={() => NavegatorService.navigation.navigate("RecuperarSenha")} >
           <Text style={{color:'mediumslateblue', fontWeight: 'bold'}} >Esqueci minha senha</Text>
         </Pressable>
 		<View style={styles.space}/>

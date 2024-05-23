@@ -17,7 +17,7 @@ const SettingsScreen = (NavegatorService:NavegatorService ) => {
 
   const confirmLogout = () => {
     console.log('Usuário deslogado');
-    NavegatorService.navigate('Home'); 
+    NavegatorService.navigation.navigate('Home'); 
     setModalVisible(false);
   };
 

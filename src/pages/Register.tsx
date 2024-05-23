@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { View, Text, StyleSheet, ButtonProps, Button, Image, Pressable, TextInput    } from 'react-native';
 import User from '../models/User'
+import {NavegatorService} from '../service/NavegatorService'
 
 const user: User = {
 	Email: "",

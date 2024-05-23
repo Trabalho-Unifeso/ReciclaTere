@@ -7,6 +7,7 @@ type RootStackParamList = {
     TelaConfig: undefined;
     Perfil: undefined;
     MapScreen: undefined;
+    RecuperarSenha: undefined;
   };
 type NavegatorService = {
     
