@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, ButtonProps, Button, Image, Pressable, TextInpu
 import { StackNavigationProp } from '@react-navigation/stack';
 import {NavegatorService} from '../service/NavegatorService'
 import User from '../models/User'
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const user: User = {
 	Email: "",
@@ -15,18 +16,18 @@ export default function Login(NavegatorService:NavegatorService) {
 		<Image style={styles.LoginImage} source={require('../assets/Img/person-placeholder.jpg')}/>
 		<View style={styles.inputConteiner}>
 			<Text style={styles.InputText}>Email:</Text>
-        	<TextInput style={styles.input} onChangeText={text => {}} />
+        	<TextInput style={styles.input} onChangeText={text => {user.Email = text}} />
 		</View>
 		<View style={styles.space}/>
 		<View style={styles.inputConteiner}>
 			<Text style={styles.InputText}>Senha:</Text>
-        	<TextInput style={styles.input} onChangeText={text => {}} />
+        	<TextInput secureTextEntry={true} style={styles.input} onChangeText={text => {user.Password = text}} />
 		</View>
 		<Pressable onPress={() => {}} style={styles.passwordRecover} onPressIn={() => NavegatorService.navigation.navigate("RecuperarSenha")} >
           <Text style={{color:'mediumslateblue', fontWeight: 'bold'}} >Esqueci minha senha</Text>
         </Pressable>
 		<View style={styles.space}/>
-		<Pressable onPress={() => {NavegatorService.navigation.navigate('MateriaisReciclaveis')}} android_ripple={{color: 'dark-green'}} style={styles.button}>
+		<Pressable onPress={() => {saveUser(); NavegatorService.navigation.navigate('MateriaisReciclaveis')}} android_ripple={{color: 'dark-green'}} style={styles.button}>
           <Text style={styles.buttonText}>Entrar</Text>
         </Pressable>
 		<Pressable onPress={() => {NavegatorService.navigation.navigate('Register')}} style={styles.InputCreateAcount}  >
@@ -34,6 +35,10 @@ export default function Login(NavegatorService:NavegatorService) {
         </Pressable>
     </View>
   );
+}
+function saveUser(){
+
+	AsyncStorage.setItem("user", JSON.stringify(user))
 }
 
 const styles = StyleSheet.create({

@@ -8,6 +8,7 @@ import HomeScreen from './src/pages/HomeScreen'
 const Stack = createNativeStackNavigator();
 
 export default function App() {
+
   return (
     <AppNavigator />
   );

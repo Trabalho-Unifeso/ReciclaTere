@@ -11,6 +11,7 @@ import TelaConfig from './src/pages/TelaConfig';
 import Perfil from './src/pages/Perfil';
 import Map from './src/pages/Map';
 import RecuperarSenha from './src/pages/RecuperarSenha';
+import Dicas from './src/pages/Dicas';
 const Stack = createStackNavigator<RootStackParamList>();
 
 export default function AppNavigator()
@@ -26,6 +27,7 @@ export default function AppNavigator()
         <Stack.Screen options={{headerShown:false}}  name="Perfil" component={Perfil} />
         <Stack.Screen options={{headerShown:false}}  name="MapScreen" component={Map} />
         <Stack.Screen options={{headerShown:false}}  name="RecuperarSenha" component={RecuperarSenha} />
+        <Stack.Screen options={{headerShown:false}}  name="Dicas" component={Dicas} />
       </Stack.Navigator>
     </NavigationContainer>
   );

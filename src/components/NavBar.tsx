@@ -22,6 +22,9 @@ export default function Navbar  (nav: NavbarProps) {
             <Pressable onPress={() => nav.route('TelaConfig')}>
             <Image style={styles.icon}   source={require('../assets/Img/gear-solid.png')} />
             </Pressable>
+            <Pressable onPress={() => nav.route('Dicas')}>
+            <Image style={styles.icon}   source={require('../assets/Img/lamp.png')} />
+            </Pressable>
 
         </View>
     );

@@ -8,6 +8,7 @@ type RootStackParamList = {
     Perfil: undefined;
     MapScreen: undefined;
     RecuperarSenha: undefined;
+    Dicas: undefined;
   };
 type NavegatorService = {
     
