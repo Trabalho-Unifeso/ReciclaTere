@@ -70,7 +70,6 @@ export default function RecuperarSenha(NavegatorService:NavegatorService) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     padding: 20,
   },
   backButton: {
@@ -92,7 +91,7 @@ const styles = StyleSheet.create({
     padding: 10,
   },
   saveButton: {
-    backgroundColor: '#007bff',
+    backgroundColor: 'green',
     padding: 10,
     borderRadius: 5,
     alignItems: 'center',

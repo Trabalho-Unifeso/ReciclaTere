@@ -24,14 +24,14 @@ export default function Login(NavegatorService:NavegatorService) {
         	<TextInput secureTextEntry={true} style={styles.input} onChangeText={text => {user.Password = text}} />
 		</View>
 		<Pressable onPress={() => {}} style={styles.passwordRecover} onPressIn={() => NavegatorService.navigation.navigate("RecuperarSenha")} >
-          <Text style={{color:'mediumslateblue', fontWeight: 'bold'}} >Esqueci minha senha</Text>
+          <Text style={{color:'green', fontWeight: 'bold'}} >Esqueci minha senha</Text>
         </Pressable>
 		<View style={styles.space}/>
 		<Pressable onPress={() => {saveUser(); NavegatorService.navigation.navigate('MateriaisReciclaveis')}} android_ripple={{color: 'dark-green'}} style={styles.button}>
           <Text style={styles.buttonText}>Entrar</Text>
         </Pressable>
 		<Pressable onPress={() => {NavegatorService.navigation.navigate('Register')}} style={styles.InputCreateAcount}  >
-          <Text style={{color:'mediumslateblue', fontWeight: 'bold'}} >Não possuo cadastro</Text>
+          <Text style={{color:'green', fontWeight: 'bold'}} >Não possuo cadastro</Text>
         </Pressable>
     </View>
   );
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
 		alignSelf:'flex-end', 
 		marginRight:'13%', 
 		borderBottomWidth: 1, 
-		borderBlockColor: 'mediumslateblue'
+		borderBlockColor: 'green'
 	},
 	inputConteiner:{
 		width: "75%"
@@ -68,16 +68,16 @@ const styles = StyleSheet.create({
 		padding: 10
 	},
 	InputText:{
-		color:"#404040",
+		color:"#green",
 		fontWeight: "bold",
 		fontSize: 15
 	},
 	InputCreateAcount:{
-		color:"#404040",
+		color:"#green",
 		fontWeight: "bold",
 		fontSize: 15,
 		borderBottomWidth: 1, 
-		borderBlockColor: 'mediumslateblue',
+		borderBlockColor: 'green',
 		marginTop: 20
 	},
 	LoginImage:{
@@ -89,7 +89,7 @@ const styles = StyleSheet.create({
 		paddingStart: -25
 	},
     button: {
-      backgroundColor: 'mediumslateblue',
+      backgroundColor: 'green',
       paddingVertical: 12,
       paddingHorizontal: 20,
       borderRadius: 5,

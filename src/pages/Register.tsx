@@ -89,10 +89,10 @@ const styles = StyleSheet.create({
 		paddingStart: -25
 	},
     button: {
-      backgroundColor: 'mediumslateblue',
+      backgroundColor: 'green',
       borderRadius: 5,
       width: 150,
-	  height: 30,
+	  height: 35,
 	  margin: 10,
 	  elevation: 0
     },
