@@ -25,6 +25,9 @@ export default function Navbar  (nav: NavbarProps) {
             <Pressable onPress={() => nav.route('Dicas')}>
             <Image style={styles.icon}   source={require('../assets/Img/lamp.png')} />
             </Pressable>
+            <Pressable onPress={() => nav.route('Calculadora')}>
+            <Image style={styles.icon}   source={require('../assets/Img/calculator-solid.png')} />
+            </Pressable>
 
         </View>
     );
@@ -40,15 +43,17 @@ const styles = StyleSheet.create({
       bottom: 0,
       width: '100%',
       flexDirection: 'row',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      paddingHorizontal: 20,
     },
     title: {
       fontSize: 18,
       fontWeight: 'bold',
     },
     icon:{
-        margin:10,
-        width:30, height: 30
+        
+        width:25, 
+        height: 30
         
     }
   });

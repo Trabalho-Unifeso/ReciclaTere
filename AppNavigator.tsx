@@ -12,6 +12,7 @@ import Perfil from './src/pages/Perfil';
 import Map from './src/pages/Map';
 import RecuperarSenha from './src/pages/RecuperarSenha';
 import Dicas from './src/pages/Dicas';
+import Calculadora from './src/pages/Calculadora';
 const Stack = createStackNavigator<RootStackParamList>();
 
 export default function AppNavigator()
@@ -28,6 +29,7 @@ export default function AppNavigator()
         <Stack.Screen options={{headerShown:false}}  name="MapScreen" component={Map} />
         <Stack.Screen options={{headerShown:false}}  name="RecuperarSenha" component={RecuperarSenha} />
         <Stack.Screen options={{headerShown:false}}  name="Dicas" component={Dicas} />
+        <Stack.Screen options={{headerShown:false}}  name="Calculadora" component={Calculadora} />
       </Stack.Navigator>
     </NavigationContainer>
   );

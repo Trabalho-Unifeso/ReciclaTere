@@ -9,6 +9,7 @@ type RootStackParamList = {
     MapScreen: undefined;
     RecuperarSenha: undefined;
     Dicas: undefined;
+    Calculadora: undefined;
   };
 type NavegatorService = {
     
