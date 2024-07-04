@@ -115,6 +115,12 @@ export default function Perfil(NavegatorService: NavegatorService) {
             >
               <Text style={styles.textStyle}>OK</Text>
             </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.button, styles.buttonClose]}
+              onPress={() => NavegatorService.navigation.navigate('Login')}
+            >
+              <Text style={styles.textStyle}>Voltar</Text>
+            </TouchableOpacity>
           </View>
         </View>
       </Modal>
